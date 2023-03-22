@@ -1,18 +1,18 @@
 @font-face {
-  font-family: 'CircularStd';
-  font-weight: 400;
+  font-family: 'SFPRODISPLAY';
+  font-weight: 800;
   font-style: normal;
-  src: local('CircularStd'), url('CircularStd-Book.otf') format('opentype');
+  src: local('SFPRODISPLAY'), url('SFPRODISPLAY-BOLD.otf') format('opentype');
 }
 @font-face {
-  font-family: 'CircularStd';
+  font-family: 'SFPRODISPLAY';
   font-weight: 500;
   font-style: normal;
-  src: local('CircularStd'), url('CircularStd-Medium.otf') format('opentype');
+  src: local('SFPRODISPLAY'), url('SFPRODISPLAY-MEDIUM.otf') format('opentype');
 }
 @font-face {
-  font-family: 'CircularStd';
-  font-weight: 700;
+  font-family: 'SFPRODISPLAY';
+  font-weight: 400;
   font-style: normal;
-  src: local('CircularStd'), url('CircularStd-Bold.otf') format('opentype');
+  src: local('SFPRODISPLAY'), url('SFPRODISPLAY-REGULAR.otf') format('opentype');
 }

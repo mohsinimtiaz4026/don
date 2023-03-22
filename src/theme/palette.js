@@ -5,8 +5,8 @@ import { alpha } from '@mui/material/styles';
 function createGradient(color1, color2) {
   return `linear-gradient(to bottom, ${color1}, ${color2})`;
 }
-function hoverGradient(){
-  return `linear-gradient(90deg, rgba(106, 5, 171, 0.2) 0%, rgba(11, 13, 20, 0) 109.86%)`;
+function hoverGradient(color1,color2){
+  return `linear-gradient(90deg, ${color1} 0%, ${color2} 109.86%)`;
 }
 
 // SETUP COLORS
@@ -80,6 +80,7 @@ const GRADIENTS = {
   success: createGradient(SUCCESS.light, SUCCESS.main),
   warning: createGradient(WARNING.light, WARNING.main),
   error: createGradient(ERROR.light, ERROR.main),
+  // hover: hoverGradient("#6a05ab","#0b0d14")  
 };
 
 const CHART_COLORS = {
@@ -118,14 +119,14 @@ const palette = {
     ...COMMON,
     mode: 'light',
     text: { primary: GREY[800], secondary: GREY[600], disabled: GREY[500] },
-    background: { paper: '#fff', default: '#fff', neutral: GREY[200] },
+    background: { paper: '#fff', default: '#F0E8F5', neutral: GREY[200] },
     action: { active: GREY[600], ...COMMON.action },
   },
   dark: {
     ...COMMON,
     mode: 'dark',
     text: { primary: '#fff', secondary: GREY[500], disabled: GREY[600] },
-    background: { paper: GREY[800], default: GREY[900], neutral: GREY[500_16] },
+    background: { paper: "#1A0A23", default: "#100616", neutral: GREY[500_16] },
     action: { active: GREY[500], ...COMMON.action },
   },
 };

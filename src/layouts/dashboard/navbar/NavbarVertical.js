@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useRouter } from "next/router";
 // @mui
 import { styled, useTheme } from "@mui/material/styles";
-import { Box, Stack, Drawer, Divider, Button } from "@mui/material";
+import { Box, Stack, Drawer, Divider, Button,Paper } from "@mui/material";
 // hooks
 import useResponsive from "../../../hooks/useResponsive";
 import useCollapseDrawer from "../../../hooks/useCollapseDrawer";
@@ -14,7 +14,7 @@ import { NAVBAR } from "../../../config";
 // components
 import Scrollbar from "../../../components/Scrollbar";
 import { NavSectionVertical } from "../../../components/nav-section";
-import Iconify from '../../../components/Iconify';
+import Iconify from "../../../components/Iconify";
 
 //
 import navConfig from "./NavConfig";
@@ -69,16 +69,14 @@ export default function NavbarVertical({ isOpenSidebar, onCloseSidebar }) {
       <Stack
         spacing={3}
         sx={{
-          pt: 3,
-          // pb: 2,
-          px: 2.5,
-          flexShrink: 0,
           ...(isCollapse && { alignItems: "center" }),
         }}
       >
-        <NavbarAccount isCollapse={isCollapse} />
+        <Paper elevation={0} sx={{py:2,px:2}}>
+          <NavbarAccount isCollapse={isCollapse} />
+        </Paper>
       </Stack>
-
+      <Paper elevation={0} sx={{px:2}}>
       <NavSectionVertical navConfig={navConfig} isCollapse={isCollapse} />
 
       <Box sx={{ flexGrow: 1 }} />
@@ -87,11 +85,11 @@ export default function NavbarVertical({ isOpenSidebar, onCloseSidebar }) {
         sx={{
           pt: 2,
           px: 2,
-          pb: 2
+          pb: 2,
         }}
       >
         <Button
-          startIcon={<Iconify icon="ri:live-line"/>}
+          startIcon={<Iconify icon="ri:live-line" />}
           variant={"outlined"}
           style={{ width: "100%" }}
           size="large"
@@ -100,14 +98,15 @@ export default function NavbarVertical({ isOpenSidebar, onCloseSidebar }) {
           Go Live
         </Button>
         <Button
-          startIcon={<Iconify icon="material-symbols:add"/>}
+          startIcon={<Iconify icon="material-symbols:add" />}
           variant={"contained"}
-          style={{ width: "100%",marginTop: "20px" }}
+          style={{ width: "100%", marginTop: "20px" }}
           size="large"
         >
           New Post
         </Button>
       </Box>
+     </Paper>
       {/* {!isCollapse && <NavbarDocs />} */}
     </Scrollbar>
   );
