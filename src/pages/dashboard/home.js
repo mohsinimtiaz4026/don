@@ -7,6 +7,7 @@ import Layout from '../../layouts';
 // components
 import Page from '../../components/Page';
 import FeedTabs from "../../components/FeedTabs";
+import SuggestionMenu from '../../components/SuggestionMenu';
 // sections
 import {NewPost, LiveNow, Items} from '../../sections/@dashboard/home';
 // ----------------------------------------------------------------------
@@ -31,7 +32,8 @@ export default function PageHome() {
             <FeedTabs />
           </Grid>
           <Grid item xs={4} md={6}>
-            {/* <LiveNow /> */}
+            <LiveNow />
+            <SuggestionMenu />
           </Grid>
         </Grid>
       </Container>
