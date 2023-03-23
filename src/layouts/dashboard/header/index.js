@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 // @mui
 import { styled, alpha } from "@mui/material/styles";
-import { Box, Stack, AppBar, Toolbar, Typography,Paper } from "@mui/material";
+import { Box, Stack, AppBar, Toolbar, Typography, Paper } from "@mui/material";
 import InputBase from "@mui/material/InputBase";
 // hooks
 import useOffSetTop from "../../../hooks/useOffSetTop";
@@ -117,62 +117,58 @@ export default function DashboardHeader({
       isOffset={isOffset}
       verticalLayout={verticalLayout}
     >
-      <Paper elevation={0} sx={{
-        py: 2
-      }}>
-        <Toolbar
-          sx={{
-            minHeight: "100% !important",
-            px: { lg: 5 },
-          }}
-        >
-          {/* {isDesktop && verticalLayout && <Image src={"/logo/icandy-logo.png"} 
+      <Toolbar
+        sx={{
+          minHeight: "100% !important",
+          px: { lg: 5 },
+        }}
+      >
+        {/* {isDesktop && verticalLayout && <Image src={"/logo/icandy-logo.png"} 
         width={48} height={48}/>} */}
 
-          {!isDesktop && (
-            <IconButtonAnimate
-              onClick={onOpenSidebar}
-              sx={{ mr: 1, color: "text.primary" }}
-            >
-              <Iconify icon="eva:menu-2-fill" />
-            </IconButtonAnimate>
-          )}
-          <Image src={"/logo/icandy-logo.png"} width={48} height={48} />
-          <Typography
-            style={{
-              fontSize: "32px",
-              textTransform: "uppercase",
-              color: "#9413EE",
-              paddingLeft: "5px",
-              lineHeight: "37px",
-            }}
+        {!isDesktop && (
+          <IconButtonAnimate
+            onClick={onOpenSidebar}
+            sx={{ mr: 1, color: "text.primary" }}
           >
-            HottiGras
-          </Typography>
-          {/* <Searchbar /> */}
-          <Search>
-            <SearchIconWrapper>
-              <Iconify icon={"eva:search-fill"} width={20} height={20} />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
-          <Box sx={{ flexGrow: 1 }} />
+            <Iconify icon="eva:menu-2-fill" />
+          </IconButtonAnimate>
+        )}
+        <Image src={"/logo/icandy-logo.png"} width={48} height={48} />
+        <Typography
+          style={{
+            fontSize: "32px",
+            textTransform: "uppercase",
+            color: "#9413EE",
+            paddingLeft: "5px",
+            lineHeight: "37px",
+          }}
+        >
+          HottiGras
+        </Typography>
+        {/* <Searchbar /> */}
+        <Search>
+          <SearchIconWrapper>
+            <Iconify icon={"eva:search-fill"} width={20} height={20} />
+          </SearchIconWrapper>
+          <StyledInputBase
+            placeholder="Search…"
+            inputProps={{ "aria-label": "search" }}
+          />
+        </Search>
+        <Box sx={{ flexGrow: 1 }} />
 
-          <Stack
-            direction="row"
-            alignItems="center"
-            spacing={{ xs: 0.5, sm: 1.5 }}
-          >
-            {/* <LanguagePopover /> */}
-            {/* <NotificationsPopover /> */}
-            {/* <ContactsPopover /> */}
-            <AccountPopover />
-          </Stack>
-        </Toolbar>
-      </Paper>
+        <Stack
+          direction="row"
+          alignItems="center"
+          spacing={{ xs: 0.5, sm: 1.5 }}
+        >
+          {/* <LanguagePopover /> */}
+          {/* <NotificationsPopover /> */}
+          {/* <ContactsPopover /> */}
+          <AccountPopover />
+        </Stack>
+      </Toolbar>
     </RootStyle>
   );
 }

@@ -72,11 +72,8 @@ export default function NavbarVertical({ isOpenSidebar, onCloseSidebar }) {
           ...(isCollapse && { alignItems: "center" }),
         }}
       >
-        <Paper elevation={0} sx={{py:2,px:2}}>
           <NavbarAccount isCollapse={isCollapse} />
-        </Paper>
       </Stack>
-      <Paper elevation={0} sx={{px:2}}>
       <NavSectionVertical navConfig={navConfig} isCollapse={isCollapse} />
 
       <Box sx={{ flexGrow: 1 }} />
@@ -106,7 +103,6 @@ export default function NavbarVertical({ isOpenSidebar, onCloseSidebar }) {
           New Post
         </Button>
       </Box>
-     </Paper>
       {/* {!isCollapse && <NavbarDocs />} */}
     </Scrollbar>
   );
