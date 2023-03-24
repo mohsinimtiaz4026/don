@@ -52,7 +52,7 @@ export default class MyDocument extends Document {
           <meta name="author" content="" />
         </Head>
 
-        <body style={{backgroundColor: '#EDE8F0'}}>
+        <body>
           <Main />
           <NextScript />
         </body>
