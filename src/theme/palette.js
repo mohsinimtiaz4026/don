@@ -1,21 +1,21 @@
-import { alpha } from '@mui/material/styles';
+import {alpha} from '@mui/material/styles';
 
 // ----------------------------------------------------------------------
 
 function createGradient(color1, color2) {
   return `linear-gradient(to bottom, ${color1}, ${color2})`;
 }
-function hoverGradient(color1,color2){
+function hoverGradient(color1, color2) {
   return `linear-gradient(90deg, ${color1} 0%, ${color2} 109.86%)`;
 }
 
 // SETUP COLORS
 const PRIMARY = {
-  lighter: '#C8FACD',
-  light: '#5BE584',
-  main: '#00AB55',
-  dark: '#007B55',
-  darker: '#005249',
+  lighter: '#6A05AB',
+  light: '#6A05AB',
+  main: '#790DC2',
+  dark: '#1A0A23',
+  darker: '#1A0A23',
 };
 const SECONDARY = {
   lighter: '#D6E4FF',
@@ -54,7 +54,7 @@ const ERROR = {
 };
 
 const GREY = {
-  0: '#FFFFFF',
+  0: '#E3D5ED',
   100: '#F9FAFB',
   200: '#F4F6F8',
   300: '#DFE3E8',
@@ -80,7 +80,7 @@ const GRADIENTS = {
   success: createGradient(SUCCESS.light, SUCCESS.main),
   warning: createGradient(WARNING.light, WARNING.main),
   error: createGradient(ERROR.light, ERROR.main),
-  // hover: hoverGradient("#6a05ab","#0b0d14")  
+  // hover: hoverGradient("#6a05ab","#0b0d14")
 };
 
 const CHART_COLORS = {
@@ -92,13 +92,13 @@ const CHART_COLORS = {
 };
 
 const COMMON = {
-  common: { black: '#000', white: '#fff' },
-  primary: { ...PRIMARY, contrastText: '#fff' },
-  secondary: { ...SECONDARY, contrastText: '#fff' },
-  info: { ...INFO, contrastText: '#fff' },
-  success: { ...SUCCESS, contrastText: GREY[800] },
-  warning: { ...WARNING, contrastText: GREY[800] },
-  error: { ...ERROR, contrastText: '#fff' },
+  common: {black: '#000', white: '#fff'},
+  primary: {...PRIMARY, contrastText: '#fff'},
+  secondary: {...SECONDARY, contrastText: '#fff'},
+  info: {...INFO, contrastText: '#fff'},
+  success: {...SUCCESS, contrastText: GREY[800]},
+  warning: {...WARNING, contrastText: GREY[800]},
+  error: {...ERROR, contrastText: '#fff'},
   grey: GREY,
   gradients: GRADIENTS,
   chart: CHART_COLORS,
@@ -118,16 +118,16 @@ const palette = {
   light: {
     ...COMMON,
     mode: 'light',
-    text: { primary: GREY[800], secondary: GREY[600], disabled: GREY[500] },
-    background: { paper: '#fff', default: '#fff', neutral: GREY[200] },
-    action: { active: GREY[600], ...COMMON.action },
+    text: {primary: GREY[800], secondary: GREY[600], disabled: GREY[500]},
+    background: {paper: '#fff', default: '#E3D5ED', neutral: GREY[200]},
+    action: {active: GREY[600], ...COMMON.action},
   },
   dark: {
     ...COMMON,
     mode: 'dark',
-    text: { primary: '#fff', secondary: GREY[500], disabled: GREY[600] },
-    background: { paper: "#1A0A23", default: "#100616", neutral: GREY[500_16] },
-    action: { active: GREY[500], ...COMMON.action },
+    text: {primary: '#fff', secondary: GREY[500], disabled: GREY[600]},
+    background: {paper: '#1A0A23', default: '#100616', neutral: GREY[500_16]},
+    action: {active: GREY[500], ...COMMON.action},
   },
 };
 
