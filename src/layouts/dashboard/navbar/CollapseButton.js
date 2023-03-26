@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Box } from '@mui/material';
 // components
 import { IconButtonAnimate } from '../../../components/animate';
+import Iconify from '@/components/Iconify';
 
 // ----------------------------------------------------------------------
 
@@ -26,7 +27,7 @@ export default function CollapseButton({ onToggleCollapse, collapseClick }) {
           }),
         }}
       >
-        {icon}
+        <Iconify icon="material-symbols:menu-open-rounded"/>
       </Box>
     </IconButtonAnimate>
   );

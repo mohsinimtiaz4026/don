@@ -1,15 +1,17 @@
 // @mui
 import { useTheme } from "@mui/material/styles";
-import { Box, Card, Avatar, Typography } from "@mui/material";
+import { Box, Card, Avatar, Typography, Stack } from "@mui/material";
 import Badge from "@mui/material/Badge";
 import { styled } from "@mui/material/styles";
 // @components
 import ActiveUsers from "@/components/ActiveUsers";
 import SvgIconStyle from "@/components/SvgIconStyle";
+import useSettings from "../../../hooks/useSettings";
 
 // ----------------------------------------------------------------------
 
 export default function LiveNow() {
+  const { themeMode } = useSettings();
   const theme = useTheme();
   const StyledBadge = styled(Badge)(({ theme }) => ({
     "& .MuiBadge-badge": {
@@ -46,10 +48,17 @@ export default function LiveNow() {
     border: `2px solid ${theme.palette.background.paper}`,
   }));
 
-  const isLight = theme.palette.mode === "light";
   return (
     <Card sx={{ px: 3, py: 1 }}>
-      <Typography sx={{ py: 2 }}>Live Now</Typography>
+      <Typography
+        sx={{ py: 2 }}
+        style={{
+          color: themeMode == "light" ? "#000" : "#fff",
+          fontWeight: 600,
+        }}
+      >
+        Live Now
+      </Typography>
       <Box
         style={{
           display: "flex",
@@ -59,7 +68,7 @@ export default function LiveNow() {
           gap: "10px",
           width: "340px",
           height: "auto",
-          background: "#F0EDF1",
+          background: themeMode === "light" ? "#F0EDF1" : "#261033",
           borderRadius: "96px",
         }}
       >
@@ -79,10 +88,20 @@ export default function LiveNow() {
         >
           <Box>
             <Box style={{ display: "flex", alignItems: "center" }}>
-              <Typography>@Joli</Typography>
-              <SvgIconStyle src="/icons/ic_batch.svg" />
+              <Typography
+                style={{
+                  color: themeMode == "light" ? "#000" : "#fff",
+                  fontWeight: 600,
+                }}>
+                @Joli
+              </Typography>
+              <Box sx={{ ml: 1 }} style={{ lineHeight: "10px" }}>
+                <SvgIconStyle src="/icons/ic_batch.svg" bgColor="#1D9FEE" />
+              </Box>
             </Box>
-            <Typography>10000 people / 678 Watching now</Typography>
+            <Typography style={{
+              color: themeMode=== "light" ? "#100616": "#E9E9E9"
+            }}>10000 people / 678 Watching now</Typography>
           </Box>
         </Box>
       </Box>

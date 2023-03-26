@@ -1,8 +1,11 @@
-import { Box, Typography, IconButton,Divider } from "@mui/material";
-import SvgIconStyle from "./SvgIconStyle";
 import Footer from "./Footer";
+import SvgIconStyle from "./SvgIconStyle";
+import SuggestionCard from "./SuggestionCard";
+import useSettings from "../hooks/useSettings";
+import { Box, Typography, IconButton,Divider } from "@mui/material";
 
 const SuggestionMenu = () => {
+  const {themeMode} = useSettings();
   return (
     <Box
       sx={{
@@ -15,7 +18,10 @@ const SuggestionMenu = () => {
         justifyContent: "space-between"
       }}>
         <Box>
-          <Typography>SUGGESTION</Typography>
+          <Typography sx={{
+            color:themeMode === "light"? "#000": "#fff",
+            fontWeight: 600
+          }}>SUGGESTION</Typography>
         </Box>
         <Box>
           <IconButton>
@@ -35,9 +41,11 @@ const SuggestionMenu = () => {
         </Box>
       </Box>
       <Divider />
+      <SuggestionCard/>
       <Typography sx={{
         pt: 2,
-        pb: 5
+        pb: 5,
+        color: themeMode === "light"? "#000": "#fff"
       }}>Show More</Typography>
       <Divider />
       <Footer />

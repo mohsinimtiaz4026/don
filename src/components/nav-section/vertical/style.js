@@ -22,7 +22,7 @@ export const ListItemStyle = styled(ListItemButton, {
   ...(activeRoot && {
     ...theme.typography.subtitle2,
     color: theme.palette.primary.main,
-    background: alpha(theme.palette.primary.main, theme.palette.action.selectedOpacity),
+    background: "linear-gradient(90deg, rgba(106, 5, 171, 0.2) 0%, rgba(11, 13, 20, 0) 109.86%)",
   }),
   // activeSub
   ...(activeSub && {

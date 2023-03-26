@@ -10,10 +10,12 @@ import { useTheme } from "@mui/material/styles";
 // components
 import Iconify from "@/components/Iconify";
 import SliderContent from "../../../components/Slider";
+import useSettings from "../../../hooks/useSettings";
 // ----------------------------------------------------------------------
 
 export default function Items() {
   const theme = useTheme();
+  const {themeMode} = useSettings();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -33,10 +35,11 @@ export default function Items() {
       >
         <Box>
           <Button variant="contained">All</Button>
-          <Button variant="contained" color="inherit" sx={{ ml: 2 }}>
+          <Button  sx={{ ml: 2,backgroundColor:themeMode === "light" ? "#fff" : " #1A0A23",
+        color:"#B9B9B9" }}>
             Purchees
           </Button>
-          <IconButton sx={{ ml: 2 }} color="primary">
+          <IconButton sx={{ ml: 2,backgroundColor:themeMode === "light" ? "#fff" : " #1A0A23",color:"#B9B9B9"  }}>
             <Iconify icon="mdi:pencil" />
           </IconButton>
         </Box>
@@ -44,6 +47,7 @@ export default function Items() {
           style={{
             display: "flex",
             alignItems: "center",
+            color: "#6E767D"
           }}
         >
           Sort By:
@@ -52,7 +56,7 @@ export default function Items() {
             style={{
               display: "flex",
               alignItems: "center",
-              justifyContent: "center"
+              justifyContent: "center",
             }}
           >
             &nbsp;
@@ -63,7 +67,12 @@ export default function Items() {
               aria-expanded={open ? "true" : undefined}
               onClick={handleClick}
               variant="text"
-              endIcon={ <Iconify icon="material-symbols:keyboard-arrow-down-rounded" />}
+              sx={{
+              color:themeMode === "light" ? "#000": "#fff"
+              }}
+              endIcon={
+                <Iconify icon="material-symbols:keyboard-arrow-down-rounded" />
+              }
             >
               Review
             </Button>
