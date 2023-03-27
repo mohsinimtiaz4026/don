@@ -25,18 +25,22 @@ const SuggestionMenu = () => {
         </Box>
         <Box>
           <IconButton>
-            <SvgIconStyle src="/icons/ic_eye_button.svg" />
+            <SvgIconStyle src="/icons/ic_eye_button.svg" 
+            sx={{width: "21px",height: "21px"}}/>
           </IconButton>
           <IconButton>
-            <SvgIconStyle src="/icons/ic_reload.svg" />
+            <SvgIconStyle src="/icons/ic_reload.svg"
+            sx={{width: "19px",height: "19px"}}/>
           </IconButton>
         </Box>
         <Box>
           <IconButton>
-            <SvgIconStyle src="/icons/ic_left.svg" />
+            <SvgIconStyle src="/icons/ic_left.svg"
+            sx={{width: "16px",height: "16px"}}/>
           </IconButton>
           <IconButton>
-            <SvgIconStyle src="/icons/ic_right.svg" />
+            <SvgIconStyle src="/icons/ic_right.svg" 
+            sx={{width: "16px",height: "16px"}}/>
           </IconButton>
         </Box>
       </Box>
