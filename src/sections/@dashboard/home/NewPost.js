@@ -48,7 +48,7 @@ export default function NewPost() {
   }));
   
   return (
-    <Card sx={{ px: 3, py: 2 }}>
+    <Card sx={{ px: 3, pt:2 }}>
       <RowStyle>
         <Avatar src="" alt="logo" />
         <Search>

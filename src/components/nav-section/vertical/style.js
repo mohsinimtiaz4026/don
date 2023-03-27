@@ -3,6 +3,8 @@ import { alpha, styled } from '@mui/material/styles';
 import { ListItemText, ListItemButton, ListItemIcon } from '@mui/material';
 // config
 import { ICON, NAVBAR } from '../../../config';
+// @components
+import useSettings from "../../../hooks/useSettings";
 
 // ----------------------------------------------------------------------
 
@@ -23,6 +25,7 @@ export const ListItemStyle = styled(ListItemButton, {
     ...theme.typography.subtitle2,
     color: theme.palette.primary.main,
     background: "linear-gradient(90deg, rgba(106, 5, 171, 0.2) 0%, rgba(11, 13, 20, 0) 109.86%)",
+    boxShadow: theme.palette.mode === "light" ? "" : "0px 2px 11px rgba(121, 13, 195, 0.56)"
   }),
   // activeSub
   ...(activeSub && {

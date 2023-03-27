@@ -117,11 +117,13 @@ export default function BasicTabs() {
             </Typography>
           </CardContent>
           <CardMedia
-            component="img"
-            height="220"
-            image="/images/image.png"
-            alt="Post"
+            component="video"
+            // height="220"
+            thumbnail="/images/image.png"
+            src="/images/_2.mp4"
+            alt="Video"
             sx={{ p: 2 }}
+            controls
           />
           <CardActions disableSpacing>
             <IconButton aria-label="add to favorites">

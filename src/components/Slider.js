@@ -21,7 +21,7 @@ const SliderContent = () => {
         <Card
           style={{
             width: "140px",
-            height: "140px",
+            height: "160px",
             position: "relative",
           }}
           sx={{
@@ -53,7 +53,7 @@ const SliderContent = () => {
         <Card
           style={{
             width: "140px",
-            height: "140px",
+            height: "160px",
             position: "relative",
             background:
               "linear-gradient(180deg, rgba(255, 80, 190, 0) 42.27%, #FF50BE 100%, #FF50BE 100%), url('/images/four.jpg')",
@@ -90,7 +90,7 @@ const SliderContent = () => {
         <Card
           style={{
             width: "140px",
-            height: "140px",
+            height: "160px",
             position: "relative",
             background:
               "linear-gradient(180deg, rgba(255, 80, 190, 0) 42.27%, #FF50BE 100%, #FF50BE 100%), url('/images/two.jpeg')",
@@ -127,7 +127,7 @@ const SliderContent = () => {
         <Card
           style={{
             width: "140px",
-            height: "140px",
+            height: "160px",
             position: "relative",
             background:
               "linear-gradient(180deg, rgba(255, 80, 190, 0) 42.27%, #FF50BE 100%, #FF50BE 100%), url('/images/download.jpg')",
@@ -164,7 +164,7 @@ const SliderContent = () => {
         <Card
           style={{
             width: "140px",
-            height: "140px",
+            height: "160px",
             position: "relative",
             background:
               "linear-gradient(180deg, rgba(255, 80, 190, 0) 42.27%, #FF50BE 100%, #FF50BE 100%), url('/images/one.jpg')",
