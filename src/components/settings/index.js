@@ -18,10 +18,6 @@ import { IconButtonAnimate, varFade } from '../animate';
 import ToggleButton from './ToggleButton';
 import SettingMode from './SettingMode';
 import SettingLayout from './SettingLayout';
-import SettingStretch from './SettingStretch';
-import SettingDirection from './SettingDirection';
-import SettingFullscreen from './SettingFullscreen';
-import SettingColorPresets from './SettingColorPresets';
 
 // ----------------------------------------------------------------------
 
@@ -86,7 +82,6 @@ export default function Settings() {
   const handleClose = () => {
     setOpen(false);
   };
-
   return (
     <>
       <Backdrop
@@ -123,26 +118,10 @@ export default function Settings() {
                   </Stack>
 
                   <Stack spacing={1.5}>
-                    <Typography variant="subtitle2">Direction</Typography>
-                    <SettingDirection />
-                  </Stack>
-
-                  <Stack spacing={1.5}>
                     <Typography variant="subtitle2">Layout</Typography>
                     <SettingLayout />
                   </Stack>
 
-                  <Stack spacing={1.5}>
-                    <Typography variant="subtitle2">Presets</Typography>
-                    <SettingColorPresets />
-                  </Stack>
-
-                  <Stack spacing={1.5}>
-                    <Typography variant="subtitle2">Stretch</Typography>
-                    <SettingStretch />
-                  </Stack>
-
-                  <SettingFullscreen />
                 </Stack>
               </Scrollbar>
             </RootStyle>

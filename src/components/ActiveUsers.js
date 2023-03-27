@@ -3,6 +3,8 @@ import { Box, Stack } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Badge from "@mui/material/Badge";
 import Avatar from "@mui/material/Avatar";
+// @components
+import Scrollbar from "./Scrollbar";
 
 const ActiveUsers = () => {
   const StyledBadge = styled(Badge)(({ theme }) => ({
@@ -35,92 +37,94 @@ const ActiveUsers = () => {
   }));
   return (
     <Box sx={{ pt: 2, pb: 1 }}>
-      <Stack spacing={1} direction="row">
-        <StyledBadge
-          overlap="circular"
-          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-          variant="dot"
-        >
-          <Avatar alt="Remy Sharp" src="/images/1.png" />
-        </StyledBadge>
-        <StyledBadge
-          overlap="circular"
-          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-          variant="dot"
-        >
-          <Avatar alt="Remy Sharp" src="/images/2.png" />
-        </StyledBadge>
-        <StyledBadge
-          overlap="circular"
-          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-          variant="dot"
-        >
-          <Avatar alt="Remy Sharp" src="/images/3.png" />
-        </StyledBadge>
-        <StyledBadge
-          overlap="circular"
-          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-          variant="dot"
-        >
-          <Avatar alt="Remy Sharp" src="/images/4.png" />
-        </StyledBadge>
-        <StyledBadge
-          overlap="circular"
-          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-          variant="dot"
-        >
-          <Avatar alt="Remy Sharp" src="/images/5.png" />
-        </StyledBadge>
-        <StyledBadge
-          overlap="circular"
-          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-          variant="dot"
-        >
-          <Avatar alt="Remy Sharp" src="/images/6.png" />
-        </StyledBadge>
-        <StyledBadge
-          overlap="circular"
-          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-          variant="dot"
-        >
-          <Avatar alt="Remy Sharp" src="/images/1.png" />
-        </StyledBadge>
-        <StyledBadge
-          overlap="circular"
-          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-          variant="dot"
-        >
-          <Avatar alt="Remy Sharp" src="/images/2.png" />
-        </StyledBadge>
-        <StyledBadge
-          overlap="circular"
-          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-          variant="dot"
-        >
-          <Avatar alt="Remy Sharp" src="/images/3.png" />
-        </StyledBadge>
-        <StyledBadge
-          overlap="circular"
-          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-          variant="dot"
-        >
-          <Avatar alt="Remy Sharp" src="/images/4.png" />
-        </StyledBadge>
-        <StyledBadge
-          overlap="circular"
-          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-          variant="dot"
-        >
-          <Avatar alt="Remy Sharp" src="/images/5.png" />
-        </StyledBadge>
-        <StyledBadge
-          overlap="circular"
-          anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-          variant="dot"
-        >
-          <Avatar alt="Remy Sharp" src="/images/6.png" />
-        </StyledBadge>
-      </Stack>
+      <Scrollbar>
+        <Stack spacing={1} direction="row">
+          <StyledBadge
+            overlap="circular"
+            anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+            variant="dot"
+          >
+            <Avatar alt="Remy Sharp" src="/images/1.png" />
+          </StyledBadge>
+          <StyledBadge
+            overlap="circular"
+            anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+            variant="dot"
+          >
+            <Avatar alt="Remy Sharp" src="/images/2.png" />
+          </StyledBadge>
+          <StyledBadge
+            overlap="circular"
+            anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+            variant="dot"
+          >
+            <Avatar alt="Remy Sharp" src="/images/3.png" />
+          </StyledBadge>
+          <StyledBadge
+            overlap="circular"
+            anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+            variant="dot"
+          >
+            <Avatar alt="Remy Sharp" src="/images/4.png" />
+          </StyledBadge>
+          <StyledBadge
+            overlap="circular"
+            anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+            variant="dot"
+          >
+            <Avatar alt="Remy Sharp" src="/images/5.png" />
+          </StyledBadge>
+          <StyledBadge
+            overlap="circular"
+            anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+            variant="dot"
+          >
+            <Avatar alt="Remy Sharp" src="/images/6.png" />
+          </StyledBadge>
+          <StyledBadge
+            overlap="circular"
+            anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+            variant="dot"
+          >
+            <Avatar alt="Remy Sharp" src="/images/1.png" />
+          </StyledBadge>
+          <StyledBadge
+            overlap="circular"
+            anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+            variant="dot"
+          >
+            <Avatar alt="Remy Sharp" src="/images/2.png" />
+          </StyledBadge>
+          <StyledBadge
+            overlap="circular"
+            anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+            variant="dot"
+          >
+            <Avatar alt="Remy Sharp" src="/images/3.png" />
+          </StyledBadge>
+          <StyledBadge
+            overlap="circular"
+            anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+            variant="dot"
+          >
+            <Avatar alt="Remy Sharp" src="/images/4.png" />
+          </StyledBadge>
+          <StyledBadge
+            overlap="circular"
+            anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+            variant="dot"
+          >
+            <Avatar alt="Remy Sharp" src="/images/5.png" />
+          </StyledBadge>
+          <StyledBadge
+            overlap="circular"
+            anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+            variant="dot"
+          >
+            <Avatar alt="Remy Sharp" src="/images/6.png" />
+          </StyledBadge>
+        </Stack>
+      </Scrollbar>
     </Box>
   );
 };

@@ -1,9 +1,18 @@
 import PropTypes from "prop-types";
+import { useEffect } from "react";
 // next
 import { useRouter } from "next/router";
 // @mui
 import { styled, useTheme } from "@mui/material/styles";
-import { Box, Stack, Drawer, Divider, Button,Paper } from "@mui/material";
+import {
+  Box,
+  Stack,
+  Drawer,
+  Typography,
+  Divider,
+  Button,
+  IconButton,
+} from "@mui/material";
 // hooks
 import useResponsive from "../../../hooks/useResponsive";
 import useCollapseDrawer from "../../../hooks/useCollapseDrawer";
@@ -14,12 +23,14 @@ import { NAVBAR } from "../../../config";
 // components
 import Scrollbar from "../../../components/Scrollbar";
 import { NavSectionVertical } from "../../../components/nav-section";
-import Iconify from "../../../components/Iconify";
-
+import useSettings from "@/hooks/useSettings";
+import SvgIconStyle from "../../../components/SvgIconStyle";
+import NavbarButtons from "../../../components/NavbarButtons";
 //
 import navConfig from "./NavConfig";
 import NavbarDocs from "./NavbarDocs";
 import NavbarAccount from "./NavbarAccount";
+import CollapseButton from "./CollapseButton";
 
 // ----------------------------------------------------------------------
 
@@ -41,6 +52,7 @@ NavbarVertical.propTypes = {
 
 export default function NavbarVertical({ isOpenSidebar, onCloseSidebar }) {
   const theme = useTheme();
+  const { themeMode } = useSettings();
 
   const { pathname } = useRouter();
 
@@ -54,6 +66,13 @@ export default function NavbarVertical({ isOpenSidebar, onCloseSidebar }) {
     onHoverEnter,
     onHoverLeave,
   } = useCollapseDrawer();
+
+  useEffect(() => {
+    if (isOpenSidebar) {
+      onCloseSidebar();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
 
   const renderContent = (
     <Scrollbar
@@ -69,13 +88,42 @@ export default function NavbarVertical({ isOpenSidebar, onCloseSidebar }) {
       <Stack
         spacing={3}
         sx={{
+          pt: 3,
+          pb: 2,
+          px: 2.5,
+          flexShrink: 0,
           ...(isCollapse && { alignItems: "center" }),
+          backgroundColor: themeMode === "light" ? "#fff" : "#1A0A23",
         }}
       >
-          <NavbarAccount isCollapse={isCollapse} />
-      </Stack>
-      <NavSectionVertical navConfig={navConfig} isCollapse={isCollapse} />
+        <Stack
+          direction="row"
+          alignItems="center"
+          justifyContent="space-between"
+        >
+          <Typography
+            sx={{
+              color: themeMode === "light" ? "#100616" : "#fff",
+              fontWeight: 400,
+            }}
+          >
+            Menu
+          </Typography>
 
+          {isDesktop && !isCollapse && (
+            <CollapseButton
+              onToggleCollapse={onToggleCollapse}
+              collapseClick={collapseClick}
+            />
+          )}
+        </Stack>
+
+        {/* <NavbarAccount isCollapse={isCollapse} /> */}
+      </Stack>
+
+      <Box sx={{ backgroundColor: themeMode === "light" ? "#fff" : "#1A0A23" }}>
+        <NavSectionVertical navConfig={navConfig} isCollapse={isCollapse} />
+      </Box>
       <Box sx={{ flexGrow: 1 }} />
       <Divider />
       <Box
@@ -83,25 +131,25 @@ export default function NavbarVertical({ isOpenSidebar, onCloseSidebar }) {
           pt: 2,
           px: 2,
           pb: 2,
+          backgroundColor: themeMode === "light" ? "#fff" : "#1A0A23",
         }}
       >
-        <Button
-          startIcon={<Iconify icon="ri:live-line" />}
-          variant={"outlined"}
-          style={{ width: "100%" }}
-          size="large"
-          color="error"
-        >
-          Go Live
-        </Button>
-        <Button
-          startIcon={<Iconify icon="material-symbols:add" />}
-          variant={"contained"}
-          style={{ width: "100%", marginTop: "20px" }}
-          size="large"
-        >
-          New Post
-        </Button>
+        {isDesktop && !isCollapse && (
+          <NavbarButtons />
+        )}
+        {isDesktop && isCollapse && (
+          <Stack>
+            <IconButton>
+              <SvgIconStyle src="/icons/ic_go_live.svg" bgColor="#F34A65" />
+            </IconButton>
+            <IconButton>
+              <SvgIconStyle
+                src="/icons/ic_plus.svg"
+                bgColor={themeMode === "light" ? "" : "#fff"}
+              />
+            </IconButton>
+          </Stack>
+        )}
       </Box>
       {/* {!isCollapse && <NavbarDocs />} */}
     </Scrollbar>
@@ -111,10 +159,25 @@ export default function NavbarVertical({ isOpenSidebar, onCloseSidebar }) {
     <RootStyle
       sx={{
         width: {
-          lg: NAVBAR.DASHBOARD_WIDTH,
+          lg: isCollapse
+            ? NAVBAR.DASHBOARD_COLLAPSE_WIDTH
+            : NAVBAR.DASHBOARD_WIDTH,
         },
+        ...(collapseClick && {
+          position: "absolute",
+        }),
       }}
     >
+      {!isDesktop && (
+        <Drawer
+          open={isOpenSidebar}
+          onClose={onCloseSidebar}
+          PaperProps={{ sx: { width: NAVBAR.DASHBOARD_WIDTH } }}
+        >
+          {renderContent}
+        </Drawer>
+      )}
+
       {isDesktop && (
         <Drawer
           open

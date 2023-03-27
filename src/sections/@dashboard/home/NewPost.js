@@ -5,6 +5,7 @@ import { Button, Card, Avatar, Box, IconButton } from "@mui/material";
 
 import { useTheme } from "@mui/material/styles";
 import SvgIconStyle from "@/components/SvgIconStyle";
+import useSettings from "../../../hooks/useSettings";
 // ----------------------------------------------------------------------
 
 const RowStyle = styled("div")({
@@ -16,13 +17,14 @@ const RowStyle = styled("div")({
 
 export default function NewPost() {
   const theme = useTheme();
+  const { themeMode } = useSettings();
   const Search = styled("div")(({ theme }) => ({
     position: "relative",
     borderRadius: "22px",
-    backgroundColor: alpha(theme.palette.common.black, 0.1),
-    "&:hover": {
-      backgroundColor: alpha(theme.palette.common.black, 0.12),
-    },
+    backgroundColor: themeMode === "light" ? "#F0E8F5" : "#100616",
+    // "&:hover": {
+    //   backgroundColor: alpha(theme.palette.common.black, 0.12),
+    // },
     marginRight: theme.spacing(2),
     marginLeft: 0,
     width: "100%",
@@ -46,12 +48,12 @@ export default function NewPost() {
   }));
   
   return (
-    <Card sx={{ px: 3, py: 2 }}>
+    <Card sx={{ px: 3, pt:2 }}>
       <RowStyle>
         <Avatar src="" alt="logo" />
         <Search>
           <StyledInputBase
-            placeholder="Search…"
+            placeholder="Search a post…"
             inputProps={{ "aria-label": "search" }}
           />
         </Search>
@@ -66,13 +68,15 @@ export default function NewPost() {
       >
         <Box sx={{ pl: 2 }}>
           <IconButton>
-            <SvgIconStyle src={"/icons/ic_picture.svg"} width={1} height={1} />
+            <SvgIconStyle bgColor="#70B5F9" src={"/icons/ic_picture.svg"} width={1} height={1} 
+            />
           </IconButton>
           <IconButton>
             <SvgIconStyle
               src={"/icons/ic_videos.svg"}
               width={1}
               height={1}
+              bgColor="#7FC15E"
             />
           </IconButton>
           <IconButton>
@@ -80,6 +84,7 @@ export default function NewPost() {
               src={"/icons/ic_mircophone.svg"}
               width={1}
               height={1}
+              bgColor="#FF5C00"
             />
           </IconButton>
           <IconButton>
@@ -87,6 +92,7 @@ export default function NewPost() {
               src={"/icons/ic_go_live.svg"}
               width={1}
               height={1}
+              bgColor="#F34A65"
             />
           </IconButton>
         </Box>

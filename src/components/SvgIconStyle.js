@@ -8,7 +8,7 @@ SvgIconStyle.propTypes = {
   sx: PropTypes.object,
 };
 
-export default function SvgIconStyle({ src, sx }) {
+export default function SvgIconStyle({ src, sx , bgColor}) {
   return (
     <Box
       component="span"
@@ -16,7 +16,7 @@ export default function SvgIconStyle({ src, sx }) {
         width: 24,
         height: 24,
         display: 'inline-block',
-        bgcolor: 'currentColor',
+        bgcolor: bgColor?bgColor:'currentColor',
         mask: `url(${src}) no-repeat center / contain`,
         WebkitMask: `url(${src}) no-repeat center / contain`,
         ...sx,

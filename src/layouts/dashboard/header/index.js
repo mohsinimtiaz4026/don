@@ -1,7 +1,15 @@
 import PropTypes from "prop-types";
 // @mui
 import { styled, alpha } from "@mui/material/styles";
-import { Box, Stack, AppBar, Toolbar, Typography, Paper } from "@mui/material";
+import {
+  Box,
+  Stack,
+  AppBar,
+  Toolbar,
+  Typography,
+  Paper,
+  Grid,
+} from "@mui/material";
 import InputBase from "@mui/material/InputBase";
 // hooks
 import useOffSetTop from "../../../hooks/useOffSetTop";
@@ -22,6 +30,7 @@ import AccountPopover from "./AccountPopover";
 import LanguagePopover from "./LanguagePopover";
 import ContactsPopover from "./ContactsPopover";
 import NotificationsPopover from "./NotificationsPopover";
+import useSettings from "../../../hooks/useSettings";
 
 // ----------------------------------------------------------------------
 
@@ -71,13 +80,15 @@ export default function DashboardHeader({
 
   const isDesktop = useResponsive("up", "lg");
 
+  const { themeMode } = useSettings();
+
   const Search = styled("div")(({ theme }) => ({
     position: "relative",
     borderRadius: theme.shape.borderRadius,
-    backgroundColor: alpha(theme.palette.common.black, 0.1),
-    "&:hover": {
-      backgroundColor: alpha(theme.palette.common.black, 0.12),
-    },
+    backgroundColor: themeMode === "light" ? "#F0E8F5": "#100616",
+    // "&:hover": {
+    //   backgroundColor: alpha(theme.palette.common.black, 0.12),
+    // },
     marginRight: theme.spacing(2),
     marginLeft: 0,
     width: "100%",
@@ -121,6 +132,7 @@ export default function DashboardHeader({
         sx={{
           minHeight: "100% !important",
           px: { lg: 5 },
+          backgroundColor: themeMode === "light" ? "#fff" : "#1A0A23",
         }}
       >
         {/* {isDesktop && verticalLayout && <Image src={"/logo/icandy-logo.png"} 
@@ -134,28 +146,36 @@ export default function DashboardHeader({
             <Iconify icon="eva:menu-2-fill" />
           </IconButtonAnimate>
         )}
-        <Image src={"/logo/icandy-logo.png"} width={48} height={48} />
+      
+        <Image src={"/logo/icandy-logo.png"} width={48} height={48} sx={{display:{md: "block", sm: "none", xs: "none", lg: "block"}}} />
         <Typography
-          style={{
+          sx={{
             fontSize: "32px",
             textTransform: "uppercase",
             color: "#9413EE",
             paddingLeft: "5px",
             lineHeight: "37px",
+            display:{md: "block", sm: "none", xs: "none", lg: "block"}
           }}
         >
           HottiGras
         </Typography>
-        {/* <Searchbar /> */}
-        <Search>
-          <SearchIconWrapper>
-            <Iconify icon={"eva:search-fill"} width={20} height={20} />
-          </SearchIconWrapper>
-          <StyledInputBase
-            placeholder="Search…"
-            inputProps={{ "aria-label": "search" }}
-          />
-        </Search>
+        <Grid sx={{ display:{md: "none", sm: "block", xs: "block", lg: "none"} }}>
+
+        <Searchbar />
+        </Grid>
+        <Grid sx={{ display:{md: "block", sm: "none", xs: "none", lg: "block"} }}>
+          <Search>
+            <SearchIconWrapper>
+              <Iconify icon={"eva:search-fill"} width={20} height={20} 
+              bgColor="#6E767D"/>
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Search icandy…"
+              inputProps={{ "aria-label": "search" }}
+            />
+          </Search>
+        </Grid>
         <Box sx={{ flexGrow: 1 }} />
 
         <Stack
