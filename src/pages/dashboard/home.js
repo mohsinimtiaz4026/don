@@ -26,12 +26,12 @@ export default function PageHome() {
     <Page title="Home">
       <Container maxWidth={themeStretch ? false : 'xl'}>
         <Grid container spacing={3}>
-          <Grid item xs={8} md={6}>
+          <Grid item xl={8} lg={6} md={6} sm={12}>
             <NewPost />
             <Items />
             <FeedTabs />
           </Grid>
-          <Grid item xs={4} md={6}>
+          <Grid item xl={4} lg={6} md={6} sm={12}>
             <LiveNow />
             <SuggestionMenu />
           </Grid>
