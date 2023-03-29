@@ -6,7 +6,7 @@ import useSettings from '../../hooks/useSettings';
 import Layout from '../../layouts';
 // components
 import Page from '../../components/Page';
-import FeedTabs from "../../components/FeedTabs";
+import FeedTabs from '../../components/FeedTabs';
 import SuggestionMenu from '../../components/SuggestionMenu';
 // sections
 import {NewPost, LiveNow, Items} from '../../sections/@dashboard/home';
@@ -24,14 +24,20 @@ export default function PageHome() {
   console.log();
   return (
     <Page title="Home">
-      <Container maxWidth={themeStretch ? false : 'xl'}>
-        <Grid container spacing={3}>
-          <Grid item xl={8} lg={6} md={6} sm={12}>
+      <Container
+        sx={{
+          pl: {xs: '0px !important'},
+          pr: {xs: '0px !important'},
+        }}
+        maxWidth={themeStretch ? false : 'xl'}
+      >
+        <Grid container>
+          <Grid p={1} item xl={8} lg={6} md={6} sm={12}>
             <NewPost />
             <Items />
             <FeedTabs />
           </Grid>
-          <Grid item xl={4} lg={6} md={6} sm={12}>
+          <Grid p={1} item xl={4} lg={6} md={6} sm={12}>
             <LiveNow />
             <SuggestionMenu />
           </Grid>

@@ -1,16 +1,16 @@
 // react
-import { useState } from "react";
+import {useState} from 'react';
 
 // @mui
-import { Button, Box, IconButton, Menu, MenuItem } from "@mui/material";
+import {Button, Box, IconButton, Menu, MenuItem} from '@mui/material';
 
 // @mui styles
-import { useTheme } from "@mui/material/styles";
+import {useTheme} from '@mui/material/styles';
 
 // components
-import Iconify from "@/components/Iconify";
-import SliderContent from "../../../components/Slider";
-import useSettings from "../../../hooks/useSettings";
+import Iconify from '@/components/Iconify';
+import SliderContent from '../../../components/Slider';
+import useSettings from '../../../hooks/useSettings';
 // ----------------------------------------------------------------------
 
 export default function Items() {
@@ -25,50 +25,61 @@ export default function Items() {
     setAnchorEl(null);
   };
   return (
-    <Box sx={{ py: 5 }}>
+    <Box sx={{py: 5}}>
       <Box
         style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
         }}
       >
         <Box>
           <Button variant="contained">All</Button>
-          <Button  sx={{ ml: 2,backgroundColor:themeMode === "light" ? "#fff" : " #1A0A23",
-        color:"#B9B9B9" }}>
+          <Button
+            sx={{
+              ml: 2,
+              backgroundColor: themeMode === 'light' ? '#fff' : ' #1A0A23',
+              color: '#B9B9B9',
+            }}
+          >
             Purchees
           </Button>
-          <IconButton sx={{ ml: 2,backgroundColor:themeMode === "light" ? "#fff" : " #1A0A23",color:"#B9B9B9"  }}>
+          <IconButton
+            sx={{
+              ml: 2,
+              backgroundColor: themeMode === 'light' ? '#fff' : ' #1A0A23',
+              color: '#B9B9B9',
+            }}
+          >
             <Iconify icon="mdi:pencil" />
           </IconButton>
         </Box>
         <Box
           style={{
-            display: "flex",
-            alignItems: "center",
-            color: "#6E767D"
+            display: 'flex',
+            alignItems: 'center',
+            color: '#6E767D',
           }}
         >
           Sort By:
           <Box
-            component={"span"}
+            component={'span'}
             style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
             &nbsp;
             <Button
               id="demo-positioned-button"
-              aria-controls={open ? "demo-positioned-menu" : undefined}
+              aria-controls={open ? 'demo-positioned-menu' : undefined}
               aria-haspopup="true"
-              aria-expanded={open ? "true" : undefined}
+              aria-expanded={open ? 'true' : undefined}
               onClick={handleClick}
               variant="text"
               sx={{
-              color:themeMode === "light" ? "#000": "#fff"
+                color: themeMode === 'light' ? '#000' : '#fff',
               }}
               endIcon={
                 <Iconify icon="material-symbols:keyboard-arrow-down-rounded" />
@@ -84,12 +95,12 @@ export default function Items() {
             open={open}
             onClose={handleClose}
             anchorOrigin={{
-              vertical: "top",
-              horizontal: "left",
+              vertical: 'top',
+              horizontal: 'left',
             }}
             transformOrigin={{
-              vertical: "top",
-              horizontal: "left",
+              vertical: 'top',
+              horizontal: 'left',
             }}
           >
             <MenuItem onClick={handleClose}>Profile</MenuItem>
@@ -98,7 +109,7 @@ export default function Items() {
           </Menu>
         </Box>
       </Box>
-      <Box sx={{ py: 2 }}>
+      <Box sx={{py: 2}}>
         <SliderContent />
       </Box>
     </Box>

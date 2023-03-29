@@ -1,23 +1,23 @@
 // @mui
-import { useTheme } from "@mui/material/styles";
-import { Box, Card, Avatar, Typography,IconButton } from "@mui/material";
-import Badge from "@mui/material/Badge";
+import {useTheme} from '@mui/material/styles';
+import {Box, Card, Avatar, Typography, IconButton} from '@mui/material';
+import Badge from '@mui/material/Badge';
 // @components
-import ActiveUsers from "@/components/ActiveUsers";
-import SvgIconStyle from "@/components/SvgIconStyle";
-import useSettings from "../../../hooks/useSettings";
+import ActiveUsers from '@/components/ActiveUsers';
+import SvgIconStyle from '@/components/SvgIconStyle';
+import useSettings from '../../../hooks/useSettings';
 
 // ----------------------------------------------------------------------
 
 export default function LiveNow() {
-  const { themeMode } = useSettings();
+  const {themeMode} = useSettings();
   const theme = useTheme();
   return (
-    <Card sx={{ px: 3, py: 1 }}>
+    <Card sx={{px: {md: 3, xs: 1, sm: 2}, py: 1}}>
       <Typography
-        sx={{ py: 2 }}
+        sx={{py: 2}}
         style={{
-          color: themeMode == "light" ? "#000" : "#fff",
+          color: themeMode == 'light' ? '#000' : '#fff',
           fontWeight: 600,
         }}
       >
@@ -25,26 +25,26 @@ export default function LiveNow() {
       </Typography>
       <Box
         style={{
-          display: "flex",
-          flexDirection: "row",
+          display: 'flex',
+          flexDirection: 'row',
         }}
       >
         <Box
           style={{
-            display: "flex",
-            flexDirection: "row",
-            alignItems: "center",
-            padding: "8px",
-            gap: "10px",
-            width: "340px",
-            height: "auto",
-            background: themeMode === "light" ? "#F0EDF1" : "#261033",
-            borderRadius: "96px",
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            padding: '8px',
+            gap: '10px',
+            width: '340px',
+            height: 'auto',
+            background: themeMode === 'light' ? '#F0EDF1' : '#261033',
+            borderRadius: '96px',
           }}
         >
           <Badge
             overlap="circular"
-            anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+            anchorOrigin={{vertical: 'bottom', horizontal: 'right'}}
             badgeContent={
               <SvgIconStyle
                 alt="Remy Sharp"
@@ -57,32 +57,32 @@ export default function LiveNow() {
               alt="Travis Howard"
               src="/images/1.png"
               sx={{
-                border: "1px solid #1DA1F2",
+                border: '1px solid #1DA1F2',
               }}
             />
           </Badge>
           <Box
             style={{
-              marginLeft: "10px",
+              marginLeft: '10px',
             }}
           >
             <Box>
-              <Box style={{ display: "flex", alignItems: "center" }}>
+              <Box style={{display: 'flex', alignItems: 'center'}}>
                 <Typography
                   style={{
-                    color: themeMode == "light" ? "#000" : "#fff",
+                    color: themeMode == 'light' ? '#000' : '#fff',
                     fontWeight: 600,
                   }}
                 >
                   @Joli
                 </Typography>
-                <Box sx={{ ml: 1 }} style={{ lineHeight: "10px" }}>
+                <Box sx={{ml: 1}} style={{lineHeight: '10px'}}>
                   <SvgIconStyle src="/icons/ic_batch.svg" bgColor="#1D9FEE" />
                 </Box>
               </Box>
               <Typography
                 style={{
-                  color: themeMode === "light" ? "#100616" : "#E9E9E9",
+                  color: themeMode === 'light' ? '#100616' : '#E9E9E9',
                 }}
               >
                 10000 people / 678 Watching now
@@ -99,7 +99,7 @@ export default function LiveNow() {
             <SvgIconStyle
               src="/icons/ic_cross.svg"
               bgColor="#676E7E"
-              sx={{ width: "16px", height: "16px" }}
+              sx={{width: '16px', height: '16px'}}
             />
           </IconButton>
         </Box>

@@ -1,7 +1,7 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import Tabs from '@mui/material/Tabs';
+import Tab from '@mui/material/Tab';
 import {
   Box,
   Card,
@@ -11,16 +11,16 @@ import {
   Avatar,
   Grid,
   IconButton,
-} from "@mui/material";
-import Iconify from "./Iconify";
-import SvgIconStyle from "./SvgIconStyle";
-import useSettings from "../hooks/useSettings";
-import Typography from "@mui/material/Typography";
-import ReactPlayer from "react-player";
-import Image from "./Image";
+} from '@mui/material';
+import Iconify from './Iconify';
+import SvgIconStyle from './SvgIconStyle';
+import useSettings from '../hooks/useSettings';
+import Typography from '@mui/material/Typography';
+import ReactPlayer from 'react-player';
+import Image from './Image';
 
 function TabPanel(props) {
-  const { children, value, index, ...other } = props;
+  const {children, value, index, ...other} = props;
 
   return (
     <div
@@ -31,7 +31,7 @@ function TabPanel(props) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{p: 3}}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -48,7 +48,7 @@ TabPanel.propTypes = {
 function a11yProps(index) {
   return {
     id: `simple-tab-${index}`,
-    "aria-controls": `simple-tabpanel-${index}`,
+    'aria-controls': `simple-tabpanel-${index}`,
   };
 }
 
@@ -58,10 +58,10 @@ export default function BasicTabs() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const { themeMode } = useSettings();
+  const {themeMode} = useSettings();
   return (
-    <Box sx={{ width: "100%" }}>
-      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+    <Box sx={{width: '100%'}}>
+      <Box sx={{borderBottom: 1, borderColor: 'divider'}}>
         <Tabs
           value={value}
           onChange={handleChange}
@@ -75,42 +75,42 @@ export default function BasicTabs() {
         <Card>
           <Grid
             sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
               px: 2,
               py: 2,
             }}
           >
-            <Grid sx={{ display: "flex", alignItems: "center" }}>
+            <Grid sx={{display: 'flex', alignItems: 'center'}}>
               <Box>
                 <Avatar src="/logo/icandy-logo.png" />
               </Box>
-              <Box sx={{ pl: 1 }}>
+              <Box sx={{pl: 1}}>
                 <Typography
                   variant="h6"
                   sx={{
-                    color: themeMode === "light" ? "#000" : "#fff",
+                    color: themeMode === 'light' ? '#000' : '#fff',
                   }}
                 >
                   HottiGras
                 </Typography>
                 <Typography
                   sx={{
-                    color: "#92A1AF",
+                    color: '#92A1AF',
                   }}
                 >
                   @hottigras
                 </Typography>
               </Box>
-              <Box sx={{ pl: 1 }}>
+              <Box sx={{pl: 1}}>
                 <SvgIconStyle src="/icons/ic_batch.svg" bgColor="#1DA1F2" />
               </Box>
             </Grid>
-            <Grid sx={{ display: "flex", alignItems: "center" }}>
+            <Grid sx={{display: 'flex', alignItems: 'center'}}>
               <Typography
                 sx={{
-                  color: "#92A1AF",
+                  color: '#92A1AF',
                 }}
               >
                 5 min ago
@@ -126,10 +126,10 @@ export default function BasicTabs() {
               <Box
                 component="span"
                 style={{
-                  color: "#1DA1F2",
-                  textDecoration: "none",
-                  padding: "0 4px",
-                  cursor: "pointer",
+                  color: '#1DA1F2',
+                  textDecoration: 'none',
+                  padding: '0 4px',
+                  cursor: 'pointer',
                 }}
               >
                 @icandy
@@ -142,8 +142,8 @@ export default function BasicTabs() {
             height="250px"
             src="/images/_2.mp4"
             style={{
-              padding: "0 12px",
-              borderRadius: "8px",
+              padding: '0 12px',
+              borderRadius: '8px',
             }}
             controls
             poster="/images/image.png"
@@ -162,42 +162,42 @@ export default function BasicTabs() {
         <Card>
           <Grid
             sx={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
               px: 2,
               py: 2,
             }}
           >
-            <Grid sx={{ display: "flex", alignItems: "center" }}>
+            <Grid sx={{display: 'flex', alignItems: 'center'}}>
               <Box>
                 <Avatar src="/logo/icandy-logo.png" />
               </Box>
-              <Box sx={{ pl: 1 }}>
+              <Box sx={{pl: 1}}>
                 <Typography
                   variant="h6"
                   sx={{
-                    color: themeMode === "light" ? "#000" : "#fff",
+                    color: themeMode === 'light' ? '#000' : '#fff',
                   }}
                 >
                   HottiGras
                 </Typography>
                 <Typography
                   sx={{
-                    color: "#92A1AF",
+                    color: '#92A1AF',
                   }}
                 >
                   @hottigras
                 </Typography>
               </Box>
-              <Box sx={{ pl: 1 }}>
+              <Box sx={{pl: 1}}>
                 <SvgIconStyle src="/icons/ic_batch.svg" bgColor="#1DA1F2" />
               </Box>
             </Grid>
-            <Grid sx={{ display: "flex", alignItems: "center" }}>
+            <Grid sx={{display: 'flex', alignItems: 'center'}}>
               <Typography
                 sx={{
-                  color: "#92A1AF",
+                  color: '#92A1AF',
                 }}
               >
                 5 min ago
@@ -213,10 +213,10 @@ export default function BasicTabs() {
               <Box
                 component="span"
                 style={{
-                  color: "#1DA1F2",
-                  textDecoration: "none",
-                  padding: "0 4px",
-                  cursor: "pointer",
+                  color: '#1DA1F2',
+                  textDecoration: 'none',
+                  padding: '0 4px',
+                  cursor: 'pointer',
                 }}
               >
                 @icandy
@@ -229,8 +229,8 @@ export default function BasicTabs() {
             height="250px"
             src="/images/_2.mp4"
             style={{
-              padding: "0 12px",
-              borderRadius: "8px",
+              padding: '0 12px',
+              borderRadius: '8px',
             }}
             controls
             poster="/images/image.png"
