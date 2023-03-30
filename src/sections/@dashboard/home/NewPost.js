@@ -10,7 +10,7 @@ import useSettings from '../../../hooks/useSettings';
 
 const RowStyle = styled('div')({
   display: 'flex',
-  alignItems: 'center',
+  alignItems: 'center'
 });
 
 // ----------------------------------------------------------------------
@@ -50,7 +50,9 @@ export default function NewPost() {
   return (
     <Card sx={{px: {md: 3, xs: 1, sm: 2}, pt: 2}}>
       <RowStyle>
-        <Avatar src="" alt="logo" />
+        <Avatar src="" alt="logo" sx={{
+          mr: 1
+        }}/>
         <Search>
           <StyledInputBase
             placeholder="Search a post…"

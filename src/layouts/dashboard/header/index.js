@@ -147,8 +147,14 @@ export default function DashboardHeader({
           </IconButtonAnimate>
         )}
       
-        <Image src={"/logo/icandy-logo.png"} width={48} height={48} sx={{display:{md: "block", sm: "none", xs: "none", lg: "block"}}} />
-        <Typography
+        {
+          isDesktop && (
+            <Image src={"/logo/logo.png"} width={148} height={100} sx={{
+              objectFit: "cover"
+              }} />
+          )
+        }
+        {/* <Typography
           sx={{
             fontSize: "32px",
             textTransform: "uppercase",
@@ -159,7 +165,7 @@ export default function DashboardHeader({
           }}
         >
           HottiGras
-        </Typography>
+        </Typography> */}
         <Grid sx={{ display:{md: "none", sm: "block", xs: "block", lg: "none"} }}>
 
         <Searchbar />

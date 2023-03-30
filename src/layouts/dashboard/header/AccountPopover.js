@@ -15,6 +15,7 @@ import Iconify from "../../../components/Iconify";
 // components
 import MenuPopover from "../../../components/MenuPopover";
 import { IconButtonAnimate } from "../../../components/animate";
+import useResponsive from "../../../hooks/useResponsive";
 
 // ----------------------------------------------------------------------
 
@@ -37,6 +38,7 @@ const MENU_OPTIONS = [
 
 export default function AccountPopover() {
   const [open, setOpen] = useState(null);
+    const isDesktop = useResponsive("up", "lg");
 
   const handleOpen = (event) => {
     setOpen(event.currentTarget);
@@ -72,7 +74,7 @@ export default function AccountPopover() {
             // src="https://minimal-assets-api.vercel.app/assets/images/avatars/avatar_5.jpg"
             alt="Sample Name"
           />
-          <Box style={{ paddingLeft: "10px" }}>
+              <Box style={{ paddingLeft: "10px" }}>
             <Typography variant="subtitle2" noWrap>
               Sample Name
             </Typography>
@@ -88,6 +90,7 @@ export default function AccountPopover() {
             />
           </Box>
         </Box>
+
       </IconButtonAnimate>
 
       <MenuPopover
