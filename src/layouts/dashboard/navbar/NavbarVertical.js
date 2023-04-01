@@ -145,9 +145,11 @@ export default function NavbarVertical({isOpenSidebar, onCloseSidebar}) {
           backgroundColor: themeMode === 'light' ? '#fff' : '#1A0A23',
         }}
       >
-        {isDesktop && !isCollapse && <NavbarButtons />}
-        {isDesktop && isCollapse && (
-          <Stack>
+        {isDesktop && <NavbarButtons />}
+        {/* {!isDesktop && (
+          <Box sx={{
+             backgroundColor: themeMode === 'light' ? '#fff' : '#1A0A23',
+          }}>
             <IconButton>
               <SvgIconStyle src="/icons/ic_go_live.svg" bgColor="#F34A65" />
             </IconButton>
@@ -157,8 +159,8 @@ export default function NavbarVertical({isOpenSidebar, onCloseSidebar}) {
                 bgColor={themeMode === 'light' ? '' : '#fff'}
               />
             </IconButton>
-          </Stack>
-        )}
+          </Box>
+        )} */}
       </Box>
     </Scrollbar>
   );

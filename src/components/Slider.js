@@ -1,8 +1,3 @@
-// import Slider from 'react-slick';
-// import 'slick-carousel/slick/slick.css';
-// import 'slick-carousel/slick/slick-theme.css';
-// import { Swiper, SwiperSlide } from "swiper/react";
-// import "swiper/css";
 // @components
 import Iconify from "./Iconify";
 // @mui
@@ -133,6 +128,7 @@ const SliderContent = () => {
             </Typography>
           </Card>
         </div>
+       
       </Grid>
     </>
   );

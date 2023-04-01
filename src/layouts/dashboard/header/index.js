@@ -149,9 +149,7 @@ export default function DashboardHeader({
       
         {
           isDesktop && (
-            <Image src={"/logo/logo.png"} width={148} height={100} sx={{
-              objectFit: "cover"
-              }} />
+            <Image src={"/logo/logo.png"} width={48} height={48}/>
           )
         }
         {/* <Typography

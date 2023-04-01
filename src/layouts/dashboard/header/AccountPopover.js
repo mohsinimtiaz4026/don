@@ -1,29 +1,34 @@
-import {useState} from 'react';
+import { useState } from "react";
 // next
-import NextLink from 'next/link';
+import NextLink from "next/link";
 // @mui
-import {alpha} from '@mui/material/styles';
-import {Box, Divider, Typography, Stack, MenuItem, Avatar} from '@mui/material';
-import Iconify from '../../../components/Iconify';
+import {
+  Box,
+  Divider,
+  Typography,
+  Stack,
+  MenuItem,
+  Avatar,
+} from "@mui/material";
+import Iconify from "../../../components/Iconify";
 // components
-import MenuPopover from '../../../components/MenuPopover';
-import {IconButtonAnimate} from '../../../components/animate';
-import useResponsive from '../../../hooks/useResponsive';
-import {IconButton} from '@mui/material';
+import MenuPopover from "../../../components/MenuPopover";
+import useResponsive from "../../../hooks/useResponsive";
+import useSettings from "../../../hooks/useSettings";
 // ----------------------------------------------------------------------
 
 const MENU_OPTIONS = [
   {
-    label: 'Home',
-    linkTo: '/',
+    label: "Home",
+    linkTo: "/",
   },
   {
-    label: 'Profile',
-    linkTo: '/',
+    label: "Profile",
+    linkTo: "/",
   },
   {
-    label: 'Settings',
-    linkTo: '/',
+    label: "Settings",
+    linkTo: "/",
   },
 ];
 
@@ -31,7 +36,8 @@ const MENU_OPTIONS = [
 
 export default function AccountPopover() {
   const [open, setOpen] = useState(null);
-  const isDesktop = useResponsive('up', 'lg');
+  const isDesktop = useResponsive("up", "lg");
+  const { themeMode } = useSettings();
 
   const handleOpen = (event) => {
     setOpen(event.currentTarget);
@@ -46,33 +52,39 @@ export default function AccountPopover() {
       <Box
         onClick={handleOpen}
         style={{
-          display: 'flex',
-          cursor: 'pointer',
-          textAlign: 'left',
-          alignItems: 'center',
+          display: "flex",
+          cursor: "pointer",
+          textAlign: "left",
+          alignItems: "center",
         }}
       >
         <Avatar
           // src="https://minimal-assets-api.vercel.app/assets/images/avatars/avatar_5.jpg"
           alt="Sample Name"
         />
-        <Box style={{paddingLeft: '10px'}}>
-          <Typography sx={{color: 'text.secondary'}} variant="subtitle2" noWrap>
+        <Box style={{ paddingLeft: "10px" }}>
+          <Typography
+            sx={{ color: "text.secondary" }}
+            variant="subtitle2"
+            noWrap
+          >
             Sample Name
           </Typography>
-          <Typography variant="body2" sx={{color: 'text.secondary'}} noWrap>
+          <Typography variant="body2" sx={{ color: "text.secondary" }} noWrap>
             sample75@gmail.com
           </Typography>
         </Box>
-        <Box style={{paddingLeft: '10px'}}>
+        <Box >
           <Iconify
-            icon={'material-symbols:keyboard-arrow-down-rounded'}
+            icon={"material-symbols:keyboard-arrow-down-rounded"}
             width={20}
             height={20}
+            sx={{
+              color: themeMode === "light" ? "#787A7D" : "#D8DBD5",
+            }}
           />
         </Box>
       </Box>
-      <IconButton></IconButton>
 
       <MenuPopover
         open={Boolean(open)}
@@ -82,24 +94,24 @@ export default function AccountPopover() {
           p: 0,
           mt: 1.5,
           ml: 0.75,
-          '& .MuiMenuItem-root': {
-            typography: 'body2',
+          "& .MuiMenuItem-root": {
+            typography: "body2",
             borderRadius: 0.75,
           },
         }}
       >
-        <Box sx={{my: 1.5, px: 2.5}}>
+        <Box sx={{ my: 1.5, px: 2.5 }}>
           <Typography variant="subtitle2" noWrap>
             Sample Name
           </Typography>
-          <Typography variant="body2" sx={{color: 'text.secondary'}} noWrap>
+          <Typography variant="body2" sx={{ color: "text.secondary" }} noWrap>
             sample75@gmail.com
           </Typography>
         </Box>
 
-        <Divider sx={{borderStyle: 'dashed'}} />
+        <Divider sx={{ borderStyle: "dashed" }} />
 
-        <Stack sx={{p: 1}}>
+        <Stack sx={{ p: 1 }}>
           {MENU_OPTIONS.map((option) => (
             <NextLink key={option.label} href={option.linkTo} passHref>
               <MenuItem key={option.label} onClick={handleClose}>
@@ -109,9 +121,9 @@ export default function AccountPopover() {
           ))}
         </Stack>
 
-        <Divider sx={{borderStyle: 'dashed'}} />
+        <Divider sx={{ borderStyle: "dashed" }} />
 
-        <MenuItem sx={{m: 1}}>Logout</MenuItem>
+        <MenuItem sx={{ m: 1 }}>Logout</MenuItem>
       </MenuPopover>
     </>
   );

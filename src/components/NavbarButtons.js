@@ -5,9 +5,9 @@ const NavbarButtons = () => {
   return (
     <Stack>
             <Button
-            //   startIcon={
-            //   <SvgIconStyle src="/icons/ic_go_live.svg" width="1" height="1"
-            // }
+              startIcon={
+              <SvgIconStyle src="/icons/ic_go_live.svg" width="1" height="1"/>
+            }
               variant={"outlined"}
               style={{ width: "100%" }}
               size="large"
@@ -16,9 +16,9 @@ const NavbarButtons = () => {
               Go Live
             </Button>
             <Button
-              // startIcon={
-              //   <SvgIconStyle src="/icons/ic_plus.svg" width="1" height="1" />
-              // }
+              startIcon={
+                <SvgIconStyle src="/icons/ic_plus.svg" width="1" height="1" />
+              }
               variant={"contained"}
               style={{ width: "100%", marginTop: "20px" }}
               size="large"
