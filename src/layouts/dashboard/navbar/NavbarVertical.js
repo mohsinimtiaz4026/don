@@ -146,8 +146,9 @@ export default function NavbarVertical({isOpenSidebar, onCloseSidebar}) {
         }}
       >
         {isDesktop && <NavbarButtons />}
-        {/* {!isDesktop && (
+        {!isDesktop && (
           <Box sx={{
+            px:1,
              backgroundColor: themeMode === 'light' ? '#fff' : '#1A0A23',
           }}>
             <IconButton>
@@ -160,7 +161,7 @@ export default function NavbarVertical({isOpenSidebar, onCloseSidebar}) {
               />
             </IconButton>
           </Box>
-        )} */}
+        )}
       </Box>
     </Scrollbar>
   );
@@ -188,7 +189,7 @@ export default function NavbarVertical({isOpenSidebar, onCloseSidebar}) {
           sx: {
             width: NAVBAR.DASHBOARD_WIDTH,
             borderRightStyle: 'dashed',
-            bgcolor: 'background.default',
+            bgcolor: themeMode === 'light' ? '#fff' : '#1A0A23', //background.default
             transition: (theme) =>
               theme.transitions.create('width', {
                 duration: theme.transitions.duration.standard,

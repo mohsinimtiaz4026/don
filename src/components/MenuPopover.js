@@ -102,7 +102,7 @@ export default function MenuPopover({ children, arrow = 'top-right', disabledArr
           ...sx,
         },
       }}
-      {...other}
+      {...other}  
     >
       {!disabledArrow && <ArrowStyle arrow={arrow} />}
 
