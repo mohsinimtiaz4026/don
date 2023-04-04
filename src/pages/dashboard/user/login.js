@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Link from "next/link";
+import { useRouter } from "next/router";
 // mui
 import {
   Grid,
@@ -19,6 +19,7 @@ import Iconify from "../../../components/Iconify";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
+  const router = useRouter();
   return (
     <Grid
       sx={{
@@ -76,8 +77,8 @@ const Login = () => {
                 justifyContent: "space-between",
               }}
             >
-              <Typography><Link href="#">Forget Password?</Link></Typography>
-              <Typography><Link href="/dashboard/user/register">Sign up</Link></Typography>
+              <Typography><a href="#" style={{textDecoration: "none",color: "#431A9E"}}>Forget Password?</a></Typography>
+              <Typography><a onClick={() => router.push("/dashboard/user/register")} style={{textDecoration: "none",color: "#431A9E",cursor:"pointer"}}>Sign up</a></Typography>
             </Box>
             <Button
               variant="contained"
