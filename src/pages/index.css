@@ -1,6 +1,6 @@
 body::-webkit-scrollbar {
   /* width: 0px !important; width of the entire scrollbar */
-  height: 0px !important;
+  /* height: 0px !important; */
 }
 
 .story-container::-webkit-scrollbar {
