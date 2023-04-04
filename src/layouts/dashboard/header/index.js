@@ -42,6 +42,8 @@ const RootStyle = styled(AppBar, {
   boxShadow: "none",
   height: HEADER.MOBILE_HEIGHT,
   zIndex: theme.zIndex.appBar + 1,
+  paddingLeft: "0 !important",
+  paddingRight: "0 !important",
   transition: theme.transitions.create(["width", "height"], {
     duration: theme.transitions.duration.shorter,
   }),

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import {useRouter} from "next/router";
 // next
 import NextLink from "next/link";
 // @mui
@@ -46,7 +47,7 @@ export default function AccountPopover() {
   const handleClose = () => {
     setOpen(null);
   };
-
+  const router = useRouter();
   return (
     <>
       <Box
@@ -62,28 +63,38 @@ export default function AccountPopover() {
           // src="https://minimal-assets-api.vercel.app/assets/images/avatars/avatar_5.jpg"
           alt="Sample Name"
         />
-        <Box style={{ paddingLeft: "10px" }}>
-          <Typography
-            sx={{ color: "text.secondary" }}
-            variant="subtitle2"
-            noWrap
-          >
-            Sample Name
-          </Typography>
-          <Typography variant="body2" sx={{ color: "text.secondary" }} noWrap>
-            sample75@gmail.com
-          </Typography>
-        </Box>
-        <Box >
-          <Iconify
-            icon={"material-symbols:keyboard-arrow-down-rounded"}
-            width={20}
-            height={20}
-            sx={{
-              color: themeMode === "light" ? "#787A7D" : "#D8DBD5",
-            }}
-          />
-        </Box>
+        {isDesktop ? (
+          <>
+            <Box style={{ paddingLeft: "10px" }}>
+              <Typography
+                sx={{ color: "text.secondary" }}
+                variant="subtitle2"
+                noWrap
+              >
+                Sample Name
+              </Typography>
+              <Typography
+                variant="body2"
+                sx={{ color: "text.secondary" }}
+                noWrap
+              >
+                sample75@gmail.com
+              </Typography>
+            </Box>
+            <Box>
+              <Iconify
+                icon={"material-symbols:keyboard-arrow-down-rounded"}
+                width={20}
+                height={20}
+                sx={{
+                  color: themeMode === "light" ? "#787A7D" : "#D8DBD5",
+                }}
+              />
+            </Box>
+          </>
+        ) : (
+          ""
+        )}
       </Box>
 
       <MenuPopover
@@ -123,7 +134,7 @@ export default function AccountPopover() {
 
         <Divider sx={{ borderStyle: "dashed" }} />
 
-        <MenuItem sx={{ m: 1 }}>Logout</MenuItem>
+        <MenuItem sx={{ m: 1 }} onClick={() => router.push('/dashboard/user/login')}>Logout</MenuItem>
       </MenuPopover>
     </>
   );
